@@ -23,7 +23,7 @@ bouton.forEach(bouton => {
             }
             else if(choixOrdi === 2){
                 texte2.textContent = choixOrdi
-            }
+            } 
 
         
     })
