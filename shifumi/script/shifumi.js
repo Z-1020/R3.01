@@ -1,18 +1,14 @@
-let choixUtilisateur = document.querySelectorAll("bouton")
-let text = document.querySelector("p")
+const bouton = document.querySelectorAll('.bouton')
+const texte = document.getElementById('choix_utilisateur')
+texte.textContent = bouton.value;
+
+bouton.forEach(bouton => {
+    bouton.addEventListener("click", ()=>{
+        if(bouton.value === "Feuille" || bouton.value === "Pierre" || bouton.value === "Ciseaux"){
+            texte.textContent = bouton.value;
+        }
+        
+    })
+});
 
 
-choixUtilisateur.addEventListener("click", afficherChoix)
-
-
-function afficherChoix(){
-    if(choixUtilisateur.value === "Feuille"){
-        text.textContent = "Feuille";
-    }
-    else if(choixUtilisateur.value === "Pierre"){
-        text.textContent = "Pierre";
-    }
-    else{
-        text.textContent = "Ciseaux";
-    }
-}
