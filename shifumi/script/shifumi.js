@@ -14,16 +14,18 @@ bouton.forEach(bouton => {
             texte.textContent = bouton.value;
         }
         choixOrdi = choix[Math.floor(Math.random() * 3)]
+        texte2.textContent = choixOrdi
 
-           if(choixOrdi === 0){
-                texte2.textContent = choixOrdi
-            }
-            else if(choixOrdi  === 1){
-                texte2.textContent = choixOrdi
-            }
-            else if(choixOrdi === 2){
-                texte2.textContent = choixOrdi
-            } 
+        if(choixOrdi == bouton.value){
+            texte3.textContent = "égalité"
+            nbEgalite ++
+        }
+        else if((bouton.value === "Pierre" && choixOrdi === "Ciseaux") || (bouton.value === "Feuille" && choixOrdi === "Pierre") || (bouton.value === "Ciseaux" && choixOrdi === "Feuille") ){
+            texte3.textContent = "Vous avez gagné"
+        }
+        else if((bouton.value === "Ciseaux" && choixOrdi === "Pierre") || (bouton.value === "Pierre" && choixOrdi === "Feuille") || (bouton.value === "Feuille" && choixOrdi === "Ciseaux") ){
+            texte3.textContent = "Vous avez perdu"
+        }
 
         
     })
