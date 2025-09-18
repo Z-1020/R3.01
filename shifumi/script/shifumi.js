@@ -5,16 +5,17 @@ const texte3 = document.getElementById('resultat')
 const victoire = document.getElementById('victoire')
 const defaite = document.getElementById('defaite')
 const egalite = document.getElementById('egalite')
+const reset = document.querySelector('.bouton-reinitialiser')
 
-let nbVictoire =0;
-let nbEgalite =0;
-let nbDefaite =0;
+let nbVictoire =0
+let nbEgalite =0
+let nbDefaite =0
 const choix = ["Feuille", "Pierre", "Ciseaux"]
 let choixOrdi;
 bouton.forEach(bouton => {
     bouton.addEventListener("click", ()=>{
         if(bouton.value === "Feuille" || bouton.value === "Pierre" || bouton.value === "Ciseaux"){
-            texte.textContent ="Votre choix: "+ bouton.value;
+            texte.textContent ="Votre choix: "+ bouton.value
         }
         choixOrdi = choix[Math.floor(Math.random() * 3)]
         texte2.textContent = "Choix de votre adversaire: "+choixOrdi
@@ -37,6 +38,15 @@ bouton.forEach(bouton => {
 
         
     })
+    reset.addEventListener('click', ()=>{
+        nbVictoire =0
+        nbEgalite =0
+        nbDefaite =0
+        victoire.textContent = "Nombre de Victoire: "+ nbVictoire
+        defaite.textContent = "Nombre de défaite: " + nbDefaite
+        egalite.textContent ="Nombre d'égalité: "+ nbEgalite
+    })
+
 });
 
 
