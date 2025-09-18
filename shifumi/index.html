@@ -13,21 +13,31 @@
     <link href="style/style.css" rel="stylesheet">
     </head>
     <body>
-        <p class="display-4 text-center text-success">Shifumi</p>
-        <p id="choix_utilisateur" class="text-center h5">Que choisissez vous ?</p>
-        <p id="choix-robot" class="text-center h5">choix adversaire</p>
+        <header>
+            <h1 class="display-4 text-center text-success">Shifumi</h1>
+        </header>
+        <main>
+        <p id="choix_utilisateur" class="text-center h2">Que choisissez vous ?</p>
+        <p id="choix-robot" class="text-center h2">choix adversaire</p>
         
-        <div class="text-center">
-        <button class="bouton btn btn-success btn-lg" type="button" value="Pierre">Pierre</button> 
-        <button class="bouton btn btn-success btn-lg"  type="button" value="Feuille">Feuille</button> 
-        <button class="bouton btn btn-success btn-lg" type="button" value="Ciseaux"> Ciseaux</button> 
-        </div>
+        <div id="groupe-bouton" class="text-center">
 
-        <p id="resultat" class="display-6 text-center">résultat</p>
+        <button class="bouton btn btn-success btn-lg" type="button" aria-label="Vous avez choisi pierre" value="Pierre">Pierre</button> 
+        <button class="bouton btn btn-success btn-lg" type="button" aria-label="Vous avez choisi feuille" value="Feuille">Feuille</button> 
+        <button class="bouton btn btn-success btn-lg" type="button" aria-label="Vous avez choisi ciseaux" value="Ciseaux"> Ciseaux</button> 
+        </div>
+        <p id="resultat" class="display-6 text-center">Résultat</p>
+
         <p id="victoire" class="text-center h5">Nombre de victoire: 0 </p>
         <p id="egalite" class="text-center h5">Nombre d'égalité: 0 </p>
         <p id="defaite" class="text-center h5">Nombre de défaite: 0 </p>
-    
-       
+        
+        <div class="text-center">
+        <button class="bouton-reinitialiser btn btn-success btn-lg" type="button" value="reset"> Réinitialiser le score</button> 
+    </div>
+    </main>
+    <footer>
+        <p></p>
+    </footer>
     </body>
 </html>
