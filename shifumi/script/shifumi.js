@@ -6,6 +6,7 @@ const victoire = document.getElementById('victoire')
 const defaite = document.getElementById('defaite')
 const egalite = document.getElementById('egalite')
 const reset = document.querySelector('.bouton-reinitialiser')
+const resultat = document.querySelector('.resultat')
 
 let nbVictoire =0
 let nbEgalite =0
@@ -24,16 +25,19 @@ bouton.forEach(bouton => {
             texte3.textContent = "égalité"
             nbEgalite ++
             egalite.textContent ="Nombre d'égalité: "+ nbEgalite
+            resultat.setAttribute('class', '"alert alert-success"')
         }
         else if((bouton.value === "Pierre" && choixOrdi === "Ciseaux") || (bouton.value === "Feuille" && choixOrdi === "Pierre") || (bouton.value === "Ciseaux" && choixOrdi === "Feuille") ){
             texte3.textContent = "Vous avez gagné"
             nbVictoire ++
             victoire.textContent = "Nombre de Victoire: "+ nbVictoire
+            resultat.setAttribute('class', '"alert alert-success"')
         }
         else if((bouton.value === "Ciseaux" && choixOrdi === "Pierre") || (bouton.value === "Pierre" && choixOrdi === "Feuille") || (bouton.value === "Feuille" && choixOrdi === "Ciseaux") ){
             texte3.textContent = "Vous avez perdu"
             nbDefaite ++
             defaite.textContent = "Nombre de défaite: " + nbDefaite
+            resultat.setAttribute('class', '"alert alert-success"')
         }
 
         
