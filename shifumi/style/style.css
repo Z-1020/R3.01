@@ -1,3 +1,40 @@
 body{
     background-color: rgb(255, 255, 255);
 }
+
+header{
+    background-color: rgb(192, 240, 192);
+    padding: 30px;
+}
+footer{
+    background-color: rgb(192, 240, 192);
+    padding: 5%;
+    
+}
+#choix-robot{
+    margin: 50px;
+}
+#choix_utilisateur{
+    margin: 50px;
+}
+.bouton {
+    padding: 30px;
+   margin-left: 2%;
+}
+#resultat{
+    margin: 50px;
+    
+}
+#victoire{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+#defaite{
+    margin-bottom: 20px;
+}
+#egalite{
+    margin-bottom: 20px;
+}
+.bouton-reinitialiser{
+    margin-bottom: 50px;
+}
