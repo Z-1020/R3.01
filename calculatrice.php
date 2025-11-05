@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calculatrice</title>
     </head>
+
     <body>
-        <h1>Calculatrice</h1>
-        <form  methode="post">
-        <p>valeur 1:</p>
-        <input type="text" name="valeur" id="valeur1">
-        <p>valeur 2:</p>
-        <input type="text" name="valeur" id="valeur2">
-        <p>opération :</p>
-        <input type="button" name="operation" id="addition" value="+">
-        <input type="button" name="operation" id="soustration" value="-">
-        <input type="button" name="operation" id="multiplication" value="X" >
-        <input type="button" name="operation" id="division" value="/">
+        
+        <form action="" method="post">
+            <p>Valeur1 :</p>
+            <input type="text" name="valeur1" size="15">
+            <p>Valeur2 :</p>
+            <input type="text" name="valeur2" size="15">
+            <p>Opération :</p>
+            <p>Addition</p>
+            <input type="radio" name="operation"  value="+">
+            <p>Soustraction</p>
+            <input type="radio" name="operation"  value="-">
+            <p>Multiplication</p>
+            <input type="radio" name="operation"  value="X" >
+            <p>Division</p>
+            <input type="radio" name="operation" value="/">
+            <input type="submit" value="envoyer">
         </form> 
         
         
@@ -22,8 +30,38 @@
 </html>
 
 <?php
-   if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $val1 = $_POST["valeur1"];
-    $val2 = $_POST["valeur2"];
+   if(isset($_POST['valeur1']) && isset($_POST['valeur2']) && isset($_POST['operation'])){
+    $val1 = $_POST['valeur1'];
+    $val2 = $_POST['valeur2'];
+    $operation = $_POST['operation'];
+    $res;
+        if($operation == "+")
+        {
+            $res = $val1 + $val2;
+            echo "Le résultat est " .$res;
+        }
+        else if($operation == "-")
+        {
+            $res = $val1 - $val2;
+            echo "Le résultat est " .$res;
+        }
+        else if($operation == "X")
+        { 
+            $res = $val1 * $val2;
+            echo "Le résultat est " .$res;
+        }
+        else { 
+            if($val2 != 0){
+                $res =  $val1 / $val2;
+                echo "Le résultat est " .$res;
+            }
+            else{
+                echo "impossible de diviser par 0";
+            }
+            
+        }
+   }
+   else{
+    echo "echec de l'envoi";
    } 
 ?>
