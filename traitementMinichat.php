@@ -1,9 +1,17 @@
 <?php
-    if($_server["REQUEST_METHOD" == "POST"]){
-        $pseudo = $_post["pseudo"];
-        $message = $p_post["message"];
-        $sql = "insert into conversation (pseudo, message, date, heure) values ($pseudo, $message, sysdate )";
-        $stmt = $pdo->prepare($sql);
-        $stmt ->execute($sql);
+session_start();
+    require_once "connexion.php";
+    if(isset($_POST["pseudo"])){
+        echo "coucou";
+    }
+    $_SESSION['pseudo'] = strip_tags($_POST['pseudo']);
+    var_dump($_SESSION['pseudo']);
+        if(isset($_POST)){
+
+        $pseudo = $_POST["pseudo"];
+        $message = $_POST["message"];
+        $sql = "insert into conversation (pseudo, message) values (,:pseudo, :message)";
+        $stmt = $conn->prepare($sql);
+//        echo "envoie réussi";
     }
 ?>

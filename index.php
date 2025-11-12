@@ -1,22 +1,21 @@
-<?php
-require_once "connexion.php";
-session_start();
-?>
-
-<!DOCTYPE>
-<html lang="fr">
+<!DOCTYPE html>
+    <html lang="fr">
+    <?php
+        require_once "connexion.php";
+        session_start();
+    ?>
     <head>
         <title>Minichat</title>
     </head>
     <body>
         <form action="traitementMinichat.php" method="post">
-            <label for="name"> Veuillez entrer votre pseudo: </label>
-            <input type="texte" id="pseudo"/>
+            <label for="pseudo"> Veuillez entrer votre pseudo: </label>
+            <input type="texte" id="pseudo" name="pseudo"/>
             <br>
-            <label for="name"> Veuillez entrer votre message: </label>
-            <input type="texte" id="message"/>
+            <label for="message"> Veuillez entrer votre message: </label>
+            <input type="texte" id="message" name="message"/>
             <br>
-            <input type="button" id="envoyer" value="Envoyer"/>
+            <input type="submit" id="envoyer" value="Envoyer"/>
 
 
         </form>
