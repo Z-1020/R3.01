@@ -13,6 +13,7 @@ session_start();
         $sql = "insert into conversation ( pseudo, message, date) values ( :pseudo, :message, SYSDATE())";
         $stmt = $conn->prepare($sql);
         $stmt->execute([':pseudo' => $pseudo, ':message' => $message]);
+        header("Location:index.php");
 //        echo "envoie réussi";
     }
 ?>
