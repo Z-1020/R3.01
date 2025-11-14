@@ -1,2 +1,1 @@
-CREATE TABLE `minichat`.`conversation` (`pseudo` VARCHAR NOT NULL , `message` INT NOT NULL , `date` DATE NOT NULL , `heure` DATETIME NOT NULL , `num` INT NOT NULL ) ENGINE = InnoDB;
-ALTER TABLE `conversation` ADD PRIMARY KEY(`num`);
+CREATE TABLE `minichat`. (`num` INT NOT NULL , `pseudo` TEXT NOT NULL , `message` TEXT NOT NULL , `date` DATETIME NOT NULL ) ENGINE = InnoDB; 
