@@ -10,8 +10,9 @@ session_start();
 
         $pseudo = $_POST["pseudo"];
         $message = $_POST["message"];
-        $sql = "insert into conversation (pseudo, message) values (,:pseudo, :message)";
+        $sql = "insert into conversation ( pseudo, message, date) values ( :pseudo, :message, SYSDATE())";
         $stmt = $conn->prepare($sql);
+        $stmt->execute([':pseudo' => $pseudo, ':message' => $message]);
 //        echo "envoie réussi";
     }
 ?>

@@ -2,7 +2,7 @@
     $servername = "localhost"; // nom du serveur
     $username = "root"; //ajouter votre identifiant
     $password = ""; //ajouter votre mot de passe
-    $bdd = "minichat"; //nom de la base de données
+    $bdd = "miniChat"; //nom de la base de données
 
     try{
         $conn =new PDO("mysql:host=$servername;dbname=$bdd", $username, $password);
