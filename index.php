@@ -20,10 +20,23 @@
 
         </form>
         <hr>
-        <p class="afficheMessage"></p>
+        <?php
+            $resMessage = [];
+           $sth = $conn->prepare("select pseudo, message, date from conversation order by date desc limit 5 ");
+           $sth->execute();
+           $res = $sth->fetchAll(PDO::FETCH_ASSOC);
+          foreach($res as $key => $val){
+            echo $val['date']. ' '.$val['pseudo']. ' à envoyé : '. $val['message'];
+            echo '</br>';
+          }
+        
+           
+        ?>
     </body>
+    
 
 </html>
+
 
 
 
